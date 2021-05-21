@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './PlaceStyle.css';
 
 const Place = ({
   name,
@@ -14,18 +15,24 @@ const Place = ({
   wifi,
 }) => {
   return (
-    <ul>
-      <li>{name}</li>
-      <li>{description}</li>
-      <li>{location}</li>
-      <li>{pricePerNight}</li>
-      <li>{image}</li>
-      <li>{imageThumbnail}</li>
-      <li>{maxGuests}</li>
-      <li>{petFriendly ? 'Pet Friendly' : 'No Pets Allowed'}</li>
-      {pool ? <li>Has a Pool!</li> : null}
-      {wifi ? <li>Free Wifi</li> : null}
-    </ul>
+    <div>
+      <ul className='place-ul'>
+        <li>Name: {name}</li>
+        <br />
+        <li>Description: {description}</li>
+        <br />
+        <li>Location: {location}</li>
+        <br />
+        <li>Price per Night: ${pricePerNight}</li>
+        <li><img src={image} /></li>
+        <li><img src={imageThumbnail} /></li>
+        <li>Max Guests: {maxGuests}</li>
+        <br />
+        <li>{petFriendly ? 'Pet Friendly' : 'No Pets Allowed'}</li>
+        {pool ? <li>Has a Pool!</li> : null}
+        {wifi ? <li>Free Wifi</li> : null}
+      </ul>
+    </div>
   );
 };
 

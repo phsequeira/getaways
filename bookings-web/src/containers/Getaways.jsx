@@ -9,6 +9,7 @@ const Getaways = () => {
     getPlaces().then(setPlaces);
   }, []);
 
+  console.log(places);
   return <PlaceList places={places} />;
 };
 

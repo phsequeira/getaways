@@ -1,5 +1,6 @@
 export const getPlaces = async () => {
   const response = await fetch(`${process.env.BASE_URL}/places`);
+  console.log(response);
   if (response.ok) {
     const result = await response.json();
     return result.map(
