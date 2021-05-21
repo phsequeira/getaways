@@ -1,6 +1,5 @@
 export const getPlaces = async () => {
   const response = await fetch(`${process.env.BASE_URL}/places`);
-  console.log(response);
   if (response.ok) {
     const result = await response.json();
     return result.map(
@@ -22,3 +21,9 @@ export const getPlaces = async () => {
     throw new Error(await response.json());
   }
 };
+
+export const getPlaceById = async (id) => {
+  const response = await fetch(`${process.env.BASE_URL}/places/${id}`)
+  const result = await response.json();
+  return result
+}
